@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login Page</title>
+<script type="text/javascript" src="Chess_validatePage.js"> </script> 
+<link rel="stylesheet" type="text/css" href="hw2style.css"/>
+</head>
+<body>
+<h2>Login Form</h2>
+
+<form id="LogIn" style="width:500px" method="post">
+  <div class="container">
+    <label><b>Username</b></label>
+    <label id="uname_msg" class="err_msg"></label>
+    <input id="name" type="text" placeholder="Enter Username" size="30" name="uname">
+	
+    <label><b>Password</b></label>
+     <label id="pswd_msg" class="err_msg"></label>
+    <input  type="password" placeholder="Enter Password" size="30" name="psw">
+     <input type="submit" value="Login"/>
+  </div>
+</form>
+<script>
+document.getElementById("LogIn").addEventListener("submit", LogInForm, false);
+window.onload=document.getElementById("name").value= "";
+</script>
+</body>
+</html>

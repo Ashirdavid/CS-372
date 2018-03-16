@@ -1,0 +1,11 @@
+login.php - depend on -> login.html
+signup.php - depend on -> signup.html
+leaderboard.php
+node.js - socket.io - express.js
+script.js
+chess.js
+chessboard-0.3.0.js
+(include jquery? prolly)
+
+https://modernweb.com/wp-content/uploads/2013/09/architecture.png
+https://modernweb.com/building-multiplayer-games-with-node-js-and-socket-io/

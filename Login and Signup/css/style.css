@@ -1,0 +1,16 @@
+.chessheader{
+    background:url(../img/chess.jpg);
+    background-repeat:repeat-y;
+    background-position:center;
+    margin: 0px;
+    background-color: #FFFFFF;
+}
+
+.tittle{
+	text-align:center;
+	color:#FFFFFF;
+	background: url(../img/negro_transparente.png);
+	padding:20px 0;	
+	font-size: 50px;
+	font-family: 'El Messiri', sans-serif;
+}

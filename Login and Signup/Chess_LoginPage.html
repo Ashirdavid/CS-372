@@ -2,11 +2,22 @@
 <html>
 <head>
 <title>Login Page</title>
-<script type="text/javascript" src="Chess_validatePage.js"> </script> 
-<link rel="stylesheet" type="text/css" href="hw2style.css"/>
+<script type="text/javascript" src="js/Chess_validatePage.js"> </script> 
+<link rel="stylesheet" type="text/css" href="css/hw2style.css"/>
+<link rel="stylesheet" href="css/bootstrap.css" />
+<link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-<h2>Login Form</h2>
+
+    <div class="container-fluid chessheader">
+        <div class="container text-center" style="background:none;">
+            <br>
+            <h1 class="tittle">The <br>Chess Game</h1>
+            <!--<button class="btn btn-default">About</button>-->
+        </div>
+    </div>
+
+<br>
 
 <form id="LogIn" style="width:500px" method="post">
   <div class="container">
@@ -18,8 +29,11 @@
      <label id="pswd_msg" class="err_msg"></label>
     <input  type="password" placeholder="Enter Password" size="30" name="psw">
      <input type="submit" value="Login"/>
+     <a class="dropdown-item" href="#">Forgot password?</a>
+     <a class="dropdown-item" href="Chess_SignupPage.html">New around here? Sign up</a>
   </div>
 </form>
+    
 <script>
 document.getElementById("LogIn").addEventListener("submit", LogInForm, false);
 window.onload=document.getElementById("name").value= "";

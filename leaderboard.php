@@ -2,26 +2,24 @@
 "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns = "http://www.w3.org/1999/xhtml">
 <head>
-<!-- <meta charset="ISO-8859-1">-->
+<title>Leaderboards</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<script type = "text/javascript" src = "validator-reactions.js" >
-</script>
-<link rel="stylesheet" type="text/css" href="leaderboardStyle.css"/>
-<title>View Leaderboards</title>
+<script type="text/javascript" src="js/Chess_validatePage.js"> </script> 
+<link rel="stylesheet" type="text/css" href="css/hw2style.css" />
+<link rel="stylesheet" href="css/bootstrap.css" />
+<link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
-
-<nav>
-<ul>
-  <li><a href="index.html">Return</a></li>
-</ul>
-</nav>
+        <div class="container-fluid chessheader">
+                <div class="container text-center" style="background:none;" >
+                    <br>
+                    <h1 class="tittle">The <br>Chess Game</h1>
+                </div>
+            </div>
+            <br>
+  <a class='btn' type="button" href='http://localhost/Welcome.html'> Return</a>
     
-<header>
-<h1> Leaderboards </h1>
-</header>
-
 <?php
     $conn = mysqli_connect("localhost", "root", "", "chess_game");
 	
@@ -33,11 +31,12 @@
     $result = mysqli_query($conn, $sql);
     $ranking = 0;
     
-    echo "<h2> PvP Rankings </h2>";
-    echo "<table>
+    echo "<h2 class='text-center'> PvP Rankings </h2>";
+    echo "<table class='table table-bordered table-hover text-center'>
         <tr>
         <th>Ranking</th>
-        <th>Username</th>
+        <th>First Name</th>
+        <th>Last Name</th>
         <th>Wins</th>
         <th>Draws</th>
         <th>Games Played</th>
@@ -45,11 +44,12 @@
     while($row = mysqli_fetch_assoc($result)) {
         $ranking++;
         echo "<tr>";
-        echo "<td>" . $ranking . "</td>";
-        echo "<td>" . $row['username'] . "</td>";
-        echo "<td>" . $row['pvpWins'] . "</td>";
-        echo "<td>" . $row['pvpDraws'] . "</td>";
-        echo "<td>" . $row['pvpGamesPlayed'] . "</td>";
+        echo "<td class='text-center'>" . $ranking . "</td>";
+        echo "<td class='text-center'>" . $row['firstName'] . "</td>";
+        echo "<td class='text-center'>" . $row['lastName'] . "</td>";
+        echo "<td class='text-center'>" . $row['pvpWins'] . "</td>";
+        echo "<td class='text-center'>" . $row['pvpDraws'] . "</td>";
+        echo "<td class='text-center'>" . $row['pvpGamesPlayed'] . "</td>";
         echo "</tr>";
     }  
     echo '</table>';
@@ -58,11 +58,12 @@
     $result = mysqli_query($conn, $sql);
     $ranking = 0;
     
-    echo "</br><h2> Single Player Rankings </h2>";
-    echo "<table>
+    echo "</br><h2 class='text-center'> Single Player Rankings </h2>";
+    echo "<table class='table table-bordered table-hover text-center'>
         <tr>
         <th>Ranking</th>
-        <th>Username</th>
+        <th>First Name</th>
+        <th>Last Name</th>
         <th>Wins</th>
         <th>Draws</th>
         <th>Games Played</th>
@@ -70,11 +71,12 @@
     while($row = mysqli_fetch_assoc($result)) {
         $ranking++;
         echo "<tr>";
-        echo "<td>" . $ranking . "</td>";
-        echo "<td>" . $row['username'] . "</td>";
-        echo "<td>" . $row['aiWins'] . "</td>";
-        echo "<td>" . $row['aiDraws'] . "</td>";
-        echo "<td>" . $row['aiGamesPlayed'] . "</td>";
+        echo "<td class='text-center'>" . $ranking . "</td>";
+        echo "<td class='text-center'>" . $row['firstName'] . "</td>";
+        echo "<td class='text-center'>" . $row['lastName'] . "</td>";
+        echo "<td class='text-center'>" . $row['aiWins'] . "</td>";
+        echo "<td class='text-center'>" . $row['aiDraws'] . "</td>";
+        echo "<td class='text-center'>" . $row['aiGamesPlayed'] . "</td>";
         echo "</tr>";
     }  
     echo '</table>';
@@ -87,9 +89,6 @@
 	
 	mysqli_close($conn);
 ?>
-    
-<footer>
-</footer>
 
 </body>
 </html>

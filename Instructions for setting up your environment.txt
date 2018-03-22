@@ -1,0 +1,65 @@
+Instructions for setting up SQL database:
+
+1. Launch the MySQL console from the WAMPServer menu. When it prompts for a password just hit enter, as the password
+is currently nothing
+2. Create the database:
+
+create database chess_game;
+
+3. Switch to the database. Do this everytime you start the console:
+
+use chess_game;
+
+4. Create the table. There is only one table for this project:
+
+create table user_information (
+	firstName varchar(20),
+	lastName varchar(20),
+	password varchar(20),
+	email varchar(30),
+	pvpWins int default 0,
+	pvpDraws int default 0,
+	pvpGamesPlayed int default 0,
+	aiWins int default 0,
+	aiDraws int default 0,
+	aiGamesPlayed int default 0
+);
+
+To query this table, use:
+
+select * from user_information;
+
+5. Populate the table with dummy information. Main purpose is to view the leaderboards or login without having to
+take the time to sign up.
+
+insert into user_information values ("admin", "admin", "12345678", "email@uregina.ca", 5, 2, 10, 2, 0, 6);
+insert into user_information values ("dummy1", "dummy1", "12345678", "email@uregina.ca", 3, 0, 20, 5, 0, 10);
+insert into user_information values ("dummy2", "dummy2", "12345678", "email@uregina.ca", 1, 10, 11, 1, 3, 4);
+insert into user_information values ("dummy3", "dummy3", "12345678", "email@uregina.ca", 0, 0, 0, 10, 0, 15);
+
+
+
+
+Accessing the webpage:
+
+To access our "production" webpage, use the following url. Note it is not secured:
+
+http://64.201.206.165:8080
+
+When making your own:
+
+Can just access with localhost.
+Make sure to change the landing page to be Chess_LoginPage.php:
+	- go to file apache httpd.config
+	- find line that says DirectoryIndex
+	- add Chess_LoginPage.php to the right of the list of indexes
+	- restart all services and attempt to access localhost again
+	- make sure to change the name of index.html in your www directory to be something different (like old_index.html) or remove
+	it from the list in apache, whichever
+
+Add all pertinent files from github into the www directory (C:\wamp64\www for me)
+	- bear in mind that the location of the files is important, you may need to rearrange things or change hrefs
+	for the time being to make things work until we decide for sure on what the exact file paths should be
+	- to make things work for now easiest thing to do is remove all files and folders from both ChessBoard file
+	and Login and Signup file and dump them in www (eg path is www/PVP/ or www/img/, etc.) and that shouldn't
+	break any links

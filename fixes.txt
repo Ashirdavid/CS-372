@@ -1,0 +1,63 @@
+3-layer architecture
+	- ask about socket.io
+sequence diagram
+	- change chess dashboard into gui
+	- change mainframe to lobby
+	- get rid of save game
+	- change rating to ranking
+	- change winning state to game processing
+class diagram
+	- currently uploaded diagram for cpu, make another for pvp
+		- pvp includes the lobby
+	- player and ai should be 1
+	- player record is an int
+	- record could be more specific, like wins, draws, games played
+	- merge winValidation in moveValidation
+	- make appropriate changes to object diagrams as necessary
+component diagram
+	- update file names
+	- add socket io and david cares stuff
+deployment diagram
+	- update for migration to azure
+	- change protocols, servers
+	- Mississauga
+	- SQL Server, protocol
+	- Microsoft server IIS 10
+list our implemented classes and functions
+	- just our own changes or the few things we did ourselves
+link of web
+	http://chess372.azurewebsites.net
+uml supporting tool
+	- StarUML
+	- Visual Paradigm
+	- Lucid Chart
+programming languages
+	- js, php, jquery, sql (?) html, css, 
+reused algorithms and programs
+	- david washington bless his soul
+	- chess (copyright in chess.js Jeff
+	- chessboard (Chris Oakman
+database management system, provide screenshot
+code test cases (5 each)
+	- correctness
+		- user sign up and login
+		- player enters online room and play against another player
+		- real time chess
+		- player plays against the CPU
+		- leaderboard correctly updates each win
+	- robustness
+		- form input validation
+		- reject incorrect moves
+		- cannot enter someone else's chess game (and 'help')
+		- cannot effect opponent moves 
+		- player cannot exit match to resign without it being recorded as a loss
+		(?)
+	- performance
+		- moves of the cpu do not take more than 2 seconds to process
+			- proportional to difficulty level
+		- minimal wait time when joining a pvp game
+		- pvp minimal wait time for moves with the opponent
+		- pvp time to alert player of opponent leaving
+		- time to alert player of game over
+		- time to update leaderboard
+document stating "we did equal share"

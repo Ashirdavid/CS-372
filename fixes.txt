@@ -59,5 +59,4 @@ code test cases (5 each)
 		- pvp minimal wait time for moves with the opponent
 		- pvp time to alert player of opponent leaving
 		- time to alert player of game over
-		- time to update leaderboard
 document stating "we did equal share"
